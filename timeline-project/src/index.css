@@ -1,0 +1,383 @@
+/* IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Radley:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+
+.radley-regular {
+  font-family: "Radley", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.radley-regular-italic {
+  font-family: "Radley", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.source-serif-4 {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-1: #f2f2f2;
+  --color-2: #3f200b;
+  --color-3: #50a290;
+  --color-4: #ac2e2e;
+
+  /* background-color: #50a290;
+  background-color: rgb(172, 46, 46); */
+
+  /* font: [style] [weight] [size]/[line-height] [family]; */
+  --h1: normal normal 8.8rem/8.8rem "Radley", serif;
+  --h1-bold: normal bold 8.8rem/8.8rem "Radley", serif;
+  --h2: normal normal 6.8rem/6.8rem "Radley", serif;
+  --h2-bold: 1.8rem;
+  --h3: normal 300 2rem/2.6rem "Radley", serif;
+  --h3-bold: 1.8rem;
+  --h4: normal 400 1.8rem/1.8rem "Radley", serif;
+  --h4-bold: 1.8rem;
+  --h5: 1.8rem;
+  --h5-bold: 1.8rem;
+  --h6: 1.8rem;
+  --h6-bold: 1.8rem;
+  --h7: 1.8rem;
+  --h7-bold: 1.8rem;
+  --h8: 1.8rem;
+  --h8-bold: 1.8rem;
+  --p1: 1.8rem;
+  --p1-bold: 1.8rem;
+  --p2: 1.8rem;
+  --p2-bold: 1.8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+@media (prefers-color-scheme: light) {
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Radley", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-1);
+}
+
+body {
+  min-height: 100%;
+  background-color: #2e2d2d;
+  padding-bottom: 2000px;
+}
+
+button,
+fieldset,
+a {
+  background: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  text-align: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+
+img[src=""],
+img:not([src]) {
+  /* background-image: url("/fallback-avatar.png"); */
+  background-size: cover;
+  background-position: center;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  display: inline-block;
+}
+
+/* TITLE */
+
+.title {
+  --stroke: 1px var(--color-1);
+  --spacing: 1px;
+  width: fit-content;
+  max-width: 556px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font: var(--h1);
+  pointer-events: none;
+  user-select: none;
+}
+
+.title_first {
+  position: relative;
+  font: var(--h2);
+}
+
+.title_second {
+  position: relative;
+  font: var(--h1);
+}
+
+.title_first::after,
+.title_second::after {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  width: 100%;
+  transform: scaleY(-0.5);
+  opacity: 0.1;
+  background: linear-gradient(to bottom, var(--color-1), transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  z-index: 1;
+  filter: blur(2px);
+  pointer-events: none;
+  user-select: none;
+  /* PER CREARE EFFETTO A STRISCE */
+  /* --gradient: repeating-linear-gradient(transparent, transparent 3px, white 3px, white 4px),
+    linear-gradient(transparent 50%, white 90%);
+  -webkit-mask-image: var(--gradient);
+  mask-image: var(--gradient); */
+}
+
+.title_first::after {
+  content: "the";
+}
+
+.title_second::after {
+  content: "TIME";
+}
+
+.title_third {
+  font: var(--h1);
+  -webkit-text-stroke: var(--stroke);
+  text-stroke: var(--stroke);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.title h2 {
+  position: relative;
+  width: 80%;
+  padding-top: 16px;
+  font: var(--h3);
+  text-align: right;
+  transform: translateX(43%);
+}
+
+.title h2::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  opacity: 0;
+  background: linear-gradient(to right, var(--color-3) 45%, transparent 100%);
+  animation: timelineIn 0.35s ease-in 0.35s forwards;
+}
+
+@keyframes timelineIn {
+  from {
+    opacity: 0;
+    width: 0%;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(100px, 100px) 1fr;
+}
+
+.timeline {
+  position: relative;
+  /* background-color: #50a290;
+  background-color: rgb(172, 46, 46); */
+}
+
+.timeline_line {
+  --time-color: var(--color-1);
+  width: 4px;
+  height: 100%;
+  margin: 0 auto;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--time-color) 0px,
+    var(--time-color) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  border-radius: 2px;
+}
+
+.timeline_line_cover {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 4px;
+  height: 192.5px;
+  margin: 0 auto;
+  background-color: var(--color-3);
+}
+
+.timeline_line_point {
+  --ball-size: 18px;
+  position: relative;
+  z-index: 1;
+  min-width: var(--ball-size);
+  width: var(--ball-size);
+  height: var(--ball-size);
+  min-height: var(--ball-size);
+  /* border: 1px solid var(--color-3); */
+  border-radius: 50%;
+  background-color: var(--color-1);
+  /* -webkit-box-shadow: 0px 0px 6px 0px var(--color-1);
+  box-shadow: 0px 0px 6px 0px var(--color-1); */
+}
+
+/* STICKY CONTENT */
+
+.timeline_content {
+  padding-top: 150px;
+}
+
+.sticky_content {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(150px, 150px) 1fr;
+  gap: 50px;
+  padding: 50px;
+}
+
+.sticky_content p {
+  font-size: 2rem;
+}
+
+.sticky_content_left {
+  position: sticky;
+  top: 150px;
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 15px;
+  text-align: right;
+}
+
+.sticky_content_left::before {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  width: 125%;
+  border-bottom: 1px solid var(--color-1);
+}
+
+.sticky_content_left h2 {
+  font: var(--h3);
+}
+
+.content_ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.content_li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 1px solid rgb(129, 129, 129, 0.15);
+}
+
+.content_li:hover {
+  background-color: rgba(124, 106, 106, 0.15);
+}
+
+.content_li_main {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.content_li h3 {
+  font: var(--h3);
+  font-family: "Source Serif 4", serif;
+}
+
+.content_li_info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.content_li_info p {
+  font: var(--h4);
+  color: var(--color-3);
+}
+
+.content_li_action_btns {
+  display: flex;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+.content_references {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 0;
+  margin-top: 20px;
+  padding: 0;
+  opacity: 0;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.content_references_expanded {
+  height: auto;
+  opacity: 1;
+}
+
+.content_references a {
+  font: var(--h4);
+  color: #7da0f7;
+}
